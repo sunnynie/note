@@ -22,4 +22,5 @@ ENTRYPOINT [ "java", "-Djava.security.egd=file:/dev/./urandom", "-jar", "/app.ja
 `springboot 不需要任何的更改`
 # idea docker 控制台乱码问题 
 ![img_1.png](image/img_6.png)
+
 `-Dfile.encoding=UTF-8`
