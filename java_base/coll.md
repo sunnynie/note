@@ -1,5 +1,5 @@
 # coll to map使用
-```json
+```
 constructMap = constructList.stream().collect(Collectors.toMap(ProjectConstruct::getId, a -> a, (a, b) -> a));
         
 使用toMap()函数之后，返回的就是一个Map了，自然会需要key和value。
