@@ -1,0 +1,22 @@
+@startmindmap
+* bean生命周期
+** xml
+** beanDefinition
+** beanFactoryPostProcessor 修改 beanDefinition
+** bean实例化
+** aware感应
+*** beanFactoryAware# setBeanFactory(this)
+*** beanClassLoaderAware# setBeanClassLoader(getBeanClassLoader())
+*** beanNameAware#setBeanName(beanName)
+*** beanFactory#addBeanPostProcess(new ApplicationContextAwareProcessor(this))
+
+** beanPostProcessor 前置处理
+** 执行Bean的初始化方法
+*** initializingBean#afterPropertiesSet
+*** 自定义初始化方法init-method
+** beanPostProcessor 后置处理
+** 使用
+** 执行Bean的消费方法
+*** disposableBean#destory
+*** 自定义销毁方法 destroy-method
+@endmindmap
