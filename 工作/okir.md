@@ -2,6 +2,13 @@
 okr_remote_api 分支 
 gateWay 添加富文本文件上传白名单
 
+nacos:
+okrH5: http://59.53.91.230:9508/
+
+notice:
+okr_ncq
+
+
 开发的接口:
 任务的保存
 任务的更新
