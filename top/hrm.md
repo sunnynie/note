@@ -5,7 +5,10 @@ alter table hrm_employee
              add station int default 0 not null comment '岗位,读取字典 0.空岗位 读取字典 hrm_employee_station'
 
 alter table hrm_employee
-    add annual_cash tinyint default 0 not null comment '年度兑现, 0.不对象 1.兑现'             
+    add annual_cash tinyint default 0 not null comment '年度兑现, 0.不对象 1.兑现'
+
+alter table hrm_recruit_employ
+    add employment_category int default 0 not null comment '用工类别,0 默认'
 ```
 
 # 代码分支 
