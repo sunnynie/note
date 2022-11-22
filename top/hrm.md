@@ -16,7 +16,9 @@ create table hrm_recruit_employ_file
     file_name             varchar(300) default '' not null comment '附件名称',
     file_url              varchar(200) default '' not null comment '附件路径'
 )
-    comment '员工录用附件'    
+    comment '员工录用附件'
+create index hrm_recruit_employ_file_hrm_recruit_employ_id_index
+    on hrm_recruit_employ_file (hrm_recruit_employ_id)
 ```
 
 # 代码分支 
