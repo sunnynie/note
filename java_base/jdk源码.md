@@ -1,0 +1,172 @@
+# jdk 源码
+### 1.HashMap
+1. HashMap的数据结构(1.7,1.8的区别)
+2. HashMap的实现原理 
+3. HashMap扩容为什么是2<sup>n</sup>-1 
+4. HashMap是线程安全的吗
+5. HashMap,HashTable是什么关系
+### 2.ThreadLocal
+1. 讲讲你对ThreadLocal的一些理解
+2. ThreadLocal有哪些场景
+3. 了解过FastThreadLocal吗
+### 3.ArrayList,LinkList
+1. 是否保证线程安全
+2. 底层数据机构
+3. 插入和删除是否受元素位置的影响
+4. 是否支持快速随机访问
+5. 内存空间占用
+6. 如何进行扩容的,默认初始化空间是多少
+### 4.String ,StringBuffer,StringBuilder
+1. 有什么区别
+2. 是线程安全的吗
+### 5.jdk1.8的新特性
+1. lambda表达式
+2. Functional interface
+3. Optionals
+4. Stream 流
+5. Parallel Stream 并行流
+
+## 并发编程
+### 1.volatile
+1. volatile的作用和使用场景
+2. volatile如何保证指令重排
+3. 什么情况下会发生指令重排
+### 2.synchronized
+1. 一般用在什么场景
+2. 实现原理
+3. 锁升级过程(偏向锁,轻量锁,重量锁)
+4. 这是JVM层面锁,还是JDK层面锁{JVM层面}
+5. 这是一种悲观锁还是乐观锁{悲观锁是独占锁}
+### 3.lock
+1. 这是JVM层面锁,还是JDK层面锁{JDK层面}
+2. 这是一种悲观锁还是乐观锁
+3. 是可重入锁码
+### ReentrantLocak
+1. 与synchronized相比较有什么不同
+2. ReentrantLock与lock的关系
+3. 锁过程中是否可中断,与之对应的synchronized可中断吗
+### 5.CAS
+1. Unsafe类的作用
+2. CAS的理解(compareAndSet)
+3. 什么是ABA问题
+4. CAS的实现有什么(AtomicInteger)
+### 6.AQS
+1. 实现类有哪些ReentrantLock,Semaphore,CountDownLatch,CyclicBarrier
+2. 实现了AQS的锁有哪些自旋锁,互斥锁,读锁写锁,条件产量,信号量,栏珊都是AQS的衍生物内存屏障,几乎所有的处理器至少支持一种粗粒度的屏障,通常被称为"栏珊(Fence)"
+## 多线程
+### 1.线程池的种类
+1. newCachedThreadPool
+2. newFixedThreadPool
+3. newScheduledThreadPool
+4. newSingleTheadExcutor
+### 2.线程的生命周期
+1. 新建,就绪,运行,阻塞(等待阻塞,同步阻塞,其他阻塞),死亡
+## JVM
+1. GC优化
+2. JVM逃逸分析
+3. 类的对象头都包含什么
+4. new Object()初始化都做了什么
+5. 运行时数据区
+6. java的内存模型以及GC算法
+## 设计模式
+1. 设计模式6大原则
+   - 单一原则(一个类和方法只做一件事)
+   - 里氏替代(多态,子类扩展父类)
+   - 依赖倒置(细节依赖抽象,下层依赖上层)
+   - 接口隔离(建立单一接口)
+   - 迪米特原则(最少知道,降低耦合)
+   - 开闭原则(抽象架构,扩展实现)
+2. 创建型模型:这种模式提供了创建对象的机制,能够提升自己已有代码的灵活性和可复用性
+3. 结构型模型:这类模式介绍如何将对象和类组装成较大的结构,并同时保持结构的灵活和高校
+4. 行为模式:这类模式负责对象将的高效沟通和职责委派
+## 反射,代理
+1. 怎么实现反射调用方法
+2. 怎么代理一个类,有什么场景使用
+3. 类代理的原理是什么
+4. 有什么框架可以做代理使用
+## redis
+###  命令
+1. 计数命令
+2. 排序命令
+3. 加锁命令
+### 架构
+1. 常用的数据类型
+2. 数据淘汰策略
+3. 单线程的为什么那么快
+4. RDB和AOF的优缺点
+5. 持久化策略选择
+### 应用
+1. 缓存雪崩,缓存穿透,缓存预热,缓存更新,缓存降级
+2. Pipeline有什么好处,为什么要用pipeline
+3. 是否使用过Redis集群,集群的原理
+4. Redis的同步机制了解码
+## mysql
+### 锁
+1. 全局锁
+2. 表锁
+3. 行锁
+4. 乐观锁,悲观锁
+5.排他锁
+5. 锁优化
+### 事务
+1. 事务特征
+2. 胀读
+3. 幻读
+4. 不可重复读
+5. 事务隔离
+6. 并发事务
+7. 事务实现原理
+### 日志
+1. 慢查询日志
+2. 错误日志
+3. redo log(重做日志)
+4. binlog(归档日志)
+5. undo log(回滚日志)
+### 索引
+1. 聚集索引vs非聚集索引
+2. 最左匹配原则
+3. 前缀索引
+### 索引
+1. innoDB
+2. myISAM
+## 4.2框架
+### 4.2.1 Spring
+- 手写Spring
+1. Bean的注册过程
+2. Bean的定义都包括什么信息
+3. Spring事务中的隔离级别有哪几种
+4. schedule使用
+### 4.2.2 Mybatis
+- 手写 mybatis
+1. mybatis在spring的使用中,只需要定义接口,就可以和xml中配置的sql语句,进行关联,进行关联,执行数据库增删改查操作.怎么实现的
+2. session 是怎么管理的
+### 4.2.3 springBoot
+- springBoot中间件设计和开发
+1. SpringBoot怎么开发一个自己的Stater
+### 4.2.4 springCloud
+1. springCloud 断路器的作用是什么
+2. springCloud的核心组件有哪些:
+- Eureka:服务注册与发现.
+- Feign:基于动态代理机制,根据注解和选择机器,拼接请求url地址,发起请求
+- Ribbon:实现负载均衡,从一个服务的多台机器中选择一台
+- Hystrix:提供线程池,不同服务走不同的线程池,实现了不同服务调用的隔离,避免了服务雪崩的问题.
+- Zuul:网关管理,由Zuul网关转发网络请求给对应的服务
+## 4.3组件
+### 4.3.1 Dubbo
+1. 通信模型是什么样的
+2. Dubbo和Spring Cloud 有什么区别
+3. Dubbo都支持什么协议,推荐哪种dubbo://(推荐) rmi:// hession:// http:// webservice:// thrift:// memcached:// redis:// rest://
+4. Dubbo里面有哪几种节点角色
+5. Dubbo中怎么处理的超时断开
+### 4.3.2 Mq
+1. RabbitMq
+2. Kafka
+### 4.3.3 elasticsearch
+1. elasticsearch了解多少,说说你们公司es的集群架构,索引数据大小,分片有多少,以及一些调优手段
+2. elasticsearch的倒排索引是什么
+3. elasticsearch是如何实现master选举的
+4. 详细描述一下Elasticsearch搜索的过程
+### 4.3.4 Hbase
+1. 拓展类的问题
+
+
