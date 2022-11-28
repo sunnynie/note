@@ -19,6 +19,9 @@ create table hrm_recruit_employ_file
     comment '员工录用附件'
 create index hrm_recruit_employ_file_hrm_recruit_employ_id_index
     on hrm_recruit_employ_file (hrm_recruit_employ_id)
+
+alter table hrm_salary_change_record
+    alter column old_post set default '';
 ```
 
 # 代码分支 
