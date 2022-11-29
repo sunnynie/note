@@ -46,6 +46,18 @@ create table hrm_employee_quit_info_file
 create index index_name
     on hrm_employee_quit_info_file (hrm_employee_quit_info_id);
 
+create table hrm_recruit_file
+(
+    hrm_recruit_id varchar(100)            not null comment '招聘审批id',
+    file_url       varchar(300) default '' not null comment '附件路径',
+    file_name      varchar(300) default '' not null comment '附件名称'
+)
+    comment '员工招聘附件表';
+
+create index index_name
+    on hrm_recruit_file (hrm_recruit_id);
+
+
 
 ```
 
