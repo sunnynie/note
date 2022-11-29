@@ -19,6 +19,46 @@ create table hrm_recruit_employ_file
     comment '员工录用附件'
 create index hrm_recruit_employ_file_hrm_recruit_employ_id_index
     on hrm_recruit_employ_file (hrm_recruit_employ_id)
+
+alter table hrm_salary_change_record
+    alter column old_post set default '';
+
+create table hrm_salary_change_record_file
+(
+    hrm_salary_change_id varchar(100)            not null,
+    file_url             varchar(200)            not null,
+    file_name            varchar(200) default '' not null
+)
+    comment '员工调薪附件表';
+
+create index hrm_salary_change_record_hrm_salary_change_id_index
+    on hrm_salary_change_record_file (hrm_salary_change_id);
+
+
+create table hrm_employee_quit_info_file
+(
+    hrm_employee_quit_info_id varchar(100)            not null comment '员工离职id',
+    file_url                  varchar(200) default '' not null comment '附件路径',
+    file_name                 varchar(300) default '' not null comment '附件名称'
+)
+    comment '员工离职附件表';
+
+create index index_name
+    on hrm_employee_quit_info_file (hrm_employee_quit_info_id);
+
+create table hrm_recruit_file
+(
+    hrm_recruit_id varchar(100)            not null comment '招聘审批id',
+    file_url       varchar(300) default '' not null comment '附件路径',
+    file_name      varchar(300) default '' not null comment '附件名称'
+)
+    comment '员工招聘附件表';
+
+create index index_name
+    on hrm_recruit_file (hrm_recruit_id);
+
+
+
 ```
 
 # 代码分支 
