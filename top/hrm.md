@@ -1,20 +1,37 @@
 # 员工档案根据授权部门查看数据
 - git分支:
     - top-hrm : hotfix/人员档案授权部门列表
-    - ```sql
-       sql:    
-      create table hrm_user_auth_dept_data
-      (
-      user_id    varchar(100)            not null comment '用户id',
-      dept_id    varchar(100) default '' not null comment '部门Id',
-      subject_id varchar(100) default '' not null comment '分公司id',
-      dept_name  varchar(100) default '' not null comment '部门名称'
-      )
-      comment '人员授权部门数据表';
-      create index index_user_id_subejct_id
+    - sql: 
+```sql
+create table hrm_user_auth_dept
+(
+    hrm_user_auth_dept_id varchar(100)            not null comment '主键id'
+        primary key,
+    hrm_user_auth_name    varchar(100) default '' not null comment '授权规则名称',
+    subject_id            varchar(100)            not null comment '分公司id'
+)
+    comment '用户授权部门';
+
+
+create table hrm_user_auth_dept_data
+(
+  user_id               varchar(100)            not null comment '用户id',
+  dept_id               varchar(100) default '' not null comment '部门Id',
+  subject_id            varchar(100) default '' not null comment '分公司id',
+  dept_name             varchar(100) default '' not null comment '部门名称',
+  user_name             varchar(100) default '' not null comment '用户名',
+  hrm_user_auth_dept_id varchar(100)            not null comment '人员授权表id'
+)
+  comment '人员授权部门数据表';
+
+create index index_user_id_subejct_id
   on hrm_user_auth_dept_data (user_id, subject_id);
 
-    ```
+
+
+```
+
+  
 
 # 招聘管理审批未结束
 - git 分支:
