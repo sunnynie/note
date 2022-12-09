@@ -2,7 +2,14 @@
 ## 分支
 - hrm: feature/人员统计
 - top-technology: feature/人员统计
+## sql
+### 补充sql 注解
+```sql
+alter table hrm_employee
+    modify political_type int null comment '政治面貌: 0.群众 1. 党员 2.团员3.预备党员';
 
+
+```
 ## 需求分析
 - 部门选择:选择的部门包含当前及一下的所有部门
 -  第一列数据
