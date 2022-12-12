@@ -40,9 +40,12 @@ create table hrm_user_auth_dept
     hrm_user_auth_dept_id varchar(100)            not null comment '主键id'
         primary key,
     hrm_user_auth_name    varchar(100) default '' not null comment '授权规则名称',
-    subject_id            varchar(100)            not null comment '分公司id'
+    subject_id            varchar(100)            not null comment '分公司id',
+    create_by             varchar(64)             not null comment '创建人',
+    create_time           datetime                null comment '创建时间'
 )
     comment '用户授权部门';
+
 
 
 create table hrm_user_auth_dept_data
