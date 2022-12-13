@@ -36,6 +36,11 @@ alter table hrm_employee
 - git分支:
     - top-hrm : hotfix/人员档案授权部门列表
     - sql: 
+- 新sql:
+  ```sql
+    alter table hrm_employee_quit_info
+    modify handover_info varchar(1000) null comment '所属部门工作交接情况';
+  ```
 ```sql
 create table hrm_user_auth_dept
 (
