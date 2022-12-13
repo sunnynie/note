@@ -40,6 +40,12 @@ alter table hrm_employee
   ```sql
     alter table hrm_employee_quit_info
     modify handover_info varchar(1000) null comment '所属部门工作交接情况';
+  
+    alter table hrm_salary_change_record
+    modify work_history text not null comment '工作简历';
+
+    alter table hrm_salary_change_record
+    modify adjustment_reasons text not null comment '项目评价及调资原因';
   ```
 ```sql
 create table hrm_user_auth_dept
