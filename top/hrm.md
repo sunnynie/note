@@ -1,4 +1,11 @@
 # 人员工资条调整
+## sql
+```sql
+alter table hrm_salary_slip_option
+    modify create_user_id varchar(64) not null;
+
+
+```
 ## 需求
 - 工资条内容添加一个月份
 - 审批使用最新的流程(可放在最后)
