@@ -1,20 +1,98 @@
+# 人员工资条调整
+## sql
+```sql
+alter table hrm_salary_slip_option
+    modify create_user_id varchar(64) not null;
+
+
+```
+## 需求
+- 工资条内容添加一个月份
+- 审批使用最新的流程(可放在最后)
+- 手机端可以查看审批之后的工资工资条
+
+# 人员统计
+## 分支
+- hrm: feature/人员统计
+- top-technology: feature/人员统计
+## sql
+## 数据字典修改
+![img_1.png](../img/人员职位字典.png)
+## 补充sql 注解
+```sql
+alter table hrm_employee
+    modify political_type int null comment '政治面貌: 0.群众 1. 党员 2.团员3.预备党员';
+
+
+```
+## 需求分析
+- 部门选择:选择的部门包含当前及一下的所有部门
+-  第一列数据
+   - 期初员工数量: 当月月1号员工数量(包含之前的人员,非离职)
+   - 期末员工数量: 当月当天员工数量(包含之前的人员,非离职)
+   - 离职员工数量: 当月的离职员工
+   - 新增员工数量: 当月的新增员工
+   - 党员人数:当前所有的党员人数(包含之前的人员,非离职)
+   - 党员占比:当前所有的党员占比(包含之前的人员,非离职)
+- 第二列
+   - 平均员工数量变化情况: 每天的人数的变化,平均值=(期初人数+期末人数)/2
+   - 入职离职情况: 当月的人员入职,离职情况
+   - 职称占比: 根据部门id,查询所有非离职的职称比例
+- 第三列
+  - 男女比例
+  - 年龄情况
+  - 学历情况
+  - 用工形式
+  - 以上的查询,都是根据部门,不分时间,查询所有
+- - -
 # 员工档案根据授权部门查看数据
 - git分支:
     - top-hrm : hotfix/人员档案授权部门列表
-    - ```sql
-       sql:    
-      create table hrm_user_auth_dept_data
-      (
-      user_id    varchar(100)            not null comment '用户id',
-      dept_id    varchar(100) default '' not null comment '部门Id',
-      subject_id varchar(100) default '' not null comment '分公司id',
-      dept_name  varchar(100) default '' not null comment '部门名称'
-      )
-      comment '人员授权部门数据表';
-      create index index_user_id_subejct_id
+    - sql: 
+- 新sql:
+  ```sql
+    alter table hrm_employee_quit_info
+    modify handover_info varchar(1000) null comment '所属部门工作交接情况';
+  
+    alter table hrm_salary_change_record
+    modify work_history text not null comment '工作简历';
+
+    alter table hrm_salary_change_record
+    modify adjustment_reasons text not null comment '项目评价及调资原因';
+  ```
+```sql
+create table hrm_user_auth_dept
+(
+    hrm_user_auth_dept_id varchar(100)            not null comment '主键id'
+        primary key,
+    hrm_user_auth_name    varchar(100) default '' not null comment '授权规则名称',
+    subject_id            varchar(100)            not null comment '分公司id',
+    create_by             varchar(64)             not null comment '创建人',
+    create_time           datetime                null comment '创建时间'
+)
+    comment '用户授权部门';
+
+
+
+create table hrm_user_auth_dept_data
+(
+  user_id               varchar(100)            not null comment '用户id',
+  dept_id               varchar(100) default '' not null comment '部门Id',
+  subject_id            varchar(100) default '' not null comment '分公司id',
+  dept_name             varchar(100) default '' not null comment '部门名称',
+  user_name             varchar(100) default '' not null comment '用户名',
+  hrm_user_auth_dept_id varchar(100)            not null comment '人员授权表id'
+)
+  comment '人员授权部门数据表';
+
+create index index_user_id_subejct_id
   on hrm_user_auth_dept_data (user_id, subject_id);
 
-    ```
+
+
+```
+
+---
 
 # 招聘管理审批未结束
 - git 分支:
@@ -82,7 +160,7 @@ create index index_name
 
 
 ```
-
+---
 # 代码分支 
     top-ui: hotfix/员工职位_ncq
     top-hrm: hotfix/员工职位_ncq
