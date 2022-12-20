@@ -9,13 +9,30 @@
 
 直接交换机的特点是消息队列通过rountingKey与交换机进行绑定,相同的routingKey会获取相同的消息,一个队列可以通过多个不同的routingKey与交换机进行绑定,不同的队列也可以通过不同的routingKey绑定交换机.
 
-![img](https://img2023.cnblogs.com/blog/309403/202212/309403-20221220165819601-935265739.png)
+```mermaid
+graph LR;
+P[P生产者] --> e[交换机-direct类型];
+
+e[交换机-direct类型]---通过waring绑定---> 消息队列1;
+e[交换机-direct类型]---通过info绑定---> 消息队列1;
+e[交换机-direct类型]---通过error绑定---> 消息队列2;
+e[交换机-direct类型]---通过warning绑定---> 消息队列2;
+消息队列1--> 消费者A;
+消息队列2--> 消费者B;
+```
 
 ## fanout exchange 扇出交换机
 
 扇出交换机的特定是类型广播,只要队列与该类型的交换机绑定,所有发送的信息都会被发到所有与之绑定的队列,与routingKey无关.
 
-![img](https://img2023.cnblogs.com/blog/309403/202212/309403-20221220170023389-574709510.png)
+```mermaid
+graph LR;
+p[p生产者] ----> e[交换机-fanout类型]
+e[交换机-fanout类型]----> 消息队列1
+e[交换机-fanout类型]----> 消息队列2
+消息队列1---> 消费者A
+消息队列2--->消费者B
+```
 
 ## topic exchange 主题交换机
 
@@ -25,7 +42,14 @@
 
 适配符如下:*.xxx.#. 此主题可以适配xxx前面只有一个单词后面零个或者多个单词的消息主题.
 
-![img](https://img2023.cnblogs.com/blog/309403/202212/309403-20221220170706142-1876791100.png)
+```mermaid
+graph LR;
+p[生产者]---> e[交换机-topic类型]
+e[交换机-topic类型]---通过*.topice.绑定*---> 消息队列1
+e[交换机-topic类型]---通过test.topice.#绑定--->消息队列2
+消息队列1-->消费者A
+消息队列2-->消费者B
+```
 
 ## header exchange
 
