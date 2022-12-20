@@ -29,5 +29,10 @@
 
 ## header exchange
 
+与routingKey无关,匹配机制是匹配消息头中的消息.在绑定消息队列与交换机之前声明一个map键值对,通过这个map对象消息队列和交换机的绑定,当消息发送到rabbitmq时会到该消息的header与exchange绑定时指定的键值对进行匹配,如果完全匹配消息会路由到该队列,否则不会路由到该队列.
 
-[(16条消息) Rabbitmq的四种类型交换机_雾失楼台，的博客-CSDN博客_rabbitmq交换机类型](https://blog.csdn.net/weixin_43416686/article/details/126014181)
+x-match=all:表示所有的键值对都匹配才能接受到消息
+
+x-match=any:表示只要是键值对匹配就能接受到消息
+
+![img](https://img2023.cnblogs.com/blog/309403/202212/309403-20221220203642162-1694778647.png)
