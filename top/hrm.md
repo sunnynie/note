@@ -69,6 +69,8 @@ alter table hrm_employee
 
 - git分支:
   - top-hrm : hotfix/人员档案授权部门列表
+  - 仿真环境的临时分支: hotfix/人员档案授权部门列表_release_temp
+  - 合并需要注意的: 文件上传到网络的时候,改用oss存储,url 需要修饰
   - sql:
 - 新sql:
   ```sql
@@ -192,6 +194,7 @@ create index index_name
 
 top-ui: hotfix/员工职位_ncq
 top-hrm: hotfix/员工职位_ncq
+
 # top
 
 读取字典配置: hrm_employee_station 人员岗位类型
