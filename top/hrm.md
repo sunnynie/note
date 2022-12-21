@@ -33,6 +33,8 @@ alter table hrm_salary_slip_option
 
 ![img_1.png](../img/人员职位字典.png)
 
+![img](https://img2023.cnblogs.com/blog/309403/202212/309403-20221221094146996-1173041939.png)
+
 ## 补充sql 注解
 
 ```sql
