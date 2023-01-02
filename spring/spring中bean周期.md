@@ -1,0 +1,10 @@
+# spring中bean的生命周期
+
+1. 实例化一个bean,也就是我们常说的new
+2. 按照spring的上下文对实例化的bean进行配置,也就ioc注入
+3. 如果这个bean已经实现了BeanNameAware接口,回调用它实现setBeanName(String)方法,此处传递的就是spring配置文件中的bean的值
+4. 如果这个bean已经实现了beanFactoryAware接口,会调用它实现的setBeanFactory(setBeanFactory(beanFactory))传递的是spring工厂本身(可以用这个方法来获取其他的bean,只需要在spring配置文件中配置一个普通的bean就可以了)
+5. 如果这个bean已经实现了ApplicationContextWare接口,会调用setApplicationContext(ApplicationContext)方法,传入Spring上下文(同样这个方法也可以实现步骤4的内容),但比4更好,因为ApplicationContext是beanFactory的子接口,有更多的实现方法;
+6. 如果这个bean关联了beanPostProcessor接口,将会调用postProcessBeforeInitialization(Object obj,String s)方法,beanPostProcessor经常被用作是bean内容的更改,并且由于这个是在bean初始化结束时调用那个方法,也可以应用于内存或者缓存技术
+7. 如果bean在spring配置文件中配置了init-method属性会自动调用其他配置的初始化方法
+8. 如果这个bean关联了beanPostProcessed接口,将会调用postProcessAfterInitialization(Object obj,String s)方法;
