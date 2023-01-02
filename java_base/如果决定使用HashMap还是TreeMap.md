@@ -37,4 +37,4 @@ hashMap继承abstractMap抽象类,treeMap继承自sortdMap接口.
 
 #### sortedMap接口:
 
-它用来保持键值的顺序,sortedMap接口为映射的视图(子集),包含两个端点,提供了范围方法.除了排序是作用于映射的键值以外,
+它用来保持键值的顺序,sortedMap接口为映射的视图(子集),包含两个端点,提供了范围方法.除了排序是作用于映射的键值以外,处理sortedMap和处理sortedSet一样,添加Comparator接口的实现.treeMap类是它的唯一的一个实现.
