@@ -14,4 +14,8 @@ alter table notice_msg
 
 alter table notice_msg
     modify pc_router varchar(1000) null comment 'PC路由(自定义)';
+
+alter table notice_msg
+    alter column group_id set default '';
+
 ```
