@@ -8,4 +8,10 @@ alter table notice_msg
 
 alter table notice_msg
     add show_type varchar(10) default 'all' not null comment '显示类型,all,app,pc';
+    
+alter table notice_msg
+    modify h5_router varchar(1000) null comment 'H5路由(自定义)';
+
+alter table notice_msg
+    modify pc_router varchar(1000) null comment 'PC路由(自定义)';
 ```
