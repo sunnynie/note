@@ -52,9 +52,6 @@ services:
       - DRONE_GITEA_SERVER=true
       - DRONE_GITEA_CLIENT_ID=gitea生成的OAuth2客户端ID
       - DRONE_GITEA_CLIENT_SECRET=gitea生成的OAuth2客户端密钥
- 
- 
-
   drone-runner-docker:
     image: drone/drone-runner-docker:latest
     container_name: drone-runner-docker
