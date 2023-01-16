@@ -1,15 +1,15 @@
-# gogs-drone安装
+# gitea-drone安装
 
 ## docker-compose.yml
 
 ```yaml
 version: '3'
 services:
-  gogs:
+  gitea:
     image: gitea/gitea：latest
     container_name: gitea
     ports:
-      # 访问gogs使用映射出来的3000端口
+      # 访问gitea使用映射出来的3000端口
       - "3000:3000"
       - "10022:22"
     volumes:
@@ -39,23 +39,21 @@ services:
       # 设置 drone-server 使用的 host 名称，可以是 ip 地址加端口号；容器中可以使用容器名称代替
       - DRONE_SERVER_HOST=drone-server
       - DRONE_GIT_ALWAYS_AUTH=false
-      # 开启 gogs
-      - DRONE_GOGS=true
-      - DRONE_GOGS_SKIP_VERIFY=false
-      # gogs 服务地址，使用容器名 + 端口号---注意点这里需有前面的HTTP
-      - DRONE_GOGS_SERVER=http://gitea:3000
-      # drone 的提供者，本项目中为 gogs服务
-      - DRONE_PROVIDER=gogs
-      # 配置 drone 数据库
-      - DRONE_DATABASE_DRIVER=mysql
-      # 配置 drone 数据库文件
-      - DRONE_DATABASE_DATASOURCE=root:123789@tcp(192.168.20.100:3306)/drone?parseTime=true
-      # 协议，可选 http、https
-      - DRONE_SERVER_PROTO=http
       # 秘钥信息设置，主要是用在 drone-server 与 drone-runner 之间的 RPC 请求
       - DRONE_RPC_SECRET=rpc_secret
       # 秘钥信息设置，主要是用在 drone-server 与 drone-runner 直接的请求
       - DRONE_SECRET=secret
+        # 协议，可选 http、https
+      - DRONE_SERVER_PROTO=http
+      - DRONE_GIT_USERNAME=userName
+      - DRONE_GIT_PASSWORD=password
+      - DRONE_USER_CREATE=username:userName,admin:true # 开启管理员账户
+      # 开启 gitea
+      - DRONE_GITEA_SERVER=true
+      - DRONE_GITEA_CLIENT_ID=gitea生成的OAuth2客户端ID
+      - DRONE_GITEA_CLIENT_SECRET=gitea生成的OAuth2客户端密钥
+ 
+ 
 
   drone-runner-docker:
     image: drone/drone-runner-docker:latest
