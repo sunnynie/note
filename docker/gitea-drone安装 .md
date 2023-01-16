@@ -6,7 +6,7 @@
 version: '3'
 services:
   gogs:
-    image: gitea/gitea
+    image: gitea/gitea：latest
     container_name: gitea
     ports:
       # 访问gogs使用映射出来的3000端口
