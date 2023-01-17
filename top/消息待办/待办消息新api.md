@@ -4,7 +4,7 @@
 
 ```sql
 alter table notice_msg
-    modify biz_type int(5) not null comment '业务类型（自定义）';
+    modify biz_type varchar(10) not null comment '业务类型（自定义）';
 
 alter table notice_msg
     add show_type varchar(10) default 'all' not null comment '显示类型,all,app,pc';
