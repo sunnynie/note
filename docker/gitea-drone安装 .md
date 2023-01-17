@@ -6,7 +6,7 @@
 version: '3'
 services:
   gitea:
-    image: gitea/gitea：latest
+    image: gitea/gitea:latest
     container_name: gitea
     ports:
       # 访问gitea使用映射出来的3000端口
