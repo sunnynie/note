@@ -1,2 +1,3 @@
 /.idea/*
 /git-flow-plus.config
+*.iml
