@@ -1,3 +1,4 @@
 /.idea/*
 /git-flow-plus.config
 *.iml
+/.vscode
