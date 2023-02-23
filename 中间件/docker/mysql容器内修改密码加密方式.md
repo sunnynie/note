@@ -1,6 +1,6 @@
 # mysql 容器内修改密码加密方式
 
-# 容器进入怒
+## 容器进入怒
 ```
 # 进入docker容器内
 sudo docker exec -it mysql bash
