@@ -1,0 +1,54 @@
+{
+    "created_time": "2023-03-07T06:45:38Z",
+    "files": [
+        {
+            "attachment_folder": "",
+            "created_time": "2023-03-07T06:45:38Z",
+            "id": "51",
+            "modified_time": "2023-03-07T06:45:38Z",
+            "name": ".keep",
+            "signature": "109725207682450",
+            "tags": [
+            ]
+        },
+        {
+            "attachment_folder": "",
+            "created_time": "2023-03-07T06:45:38Z",
+            "id": "52",
+            "modified_time": "2023-03-07T06:45:38Z",
+            "name": "aop实现日志的优雅实现.md",
+            "signature": "118731754102162",
+            "tags": [
+            ]
+        },
+        {
+            "attachment_folder": "",
+            "created_time": "2023-03-07T06:45:38Z",
+            "id": "56",
+            "modified_time": "2023-03-07T06:45:38Z",
+            "name": "spring中bean周期.md",
+            "signature": "55230662630802",
+            "tags": [
+            ]
+        },
+        {
+            "attachment_folder": "",
+            "created_time": "2023-03-07T06:45:38Z",
+            "id": "57",
+            "modified_time": "2023-03-07T06:45:38Z",
+            "name": "spring生命周期.puml",
+            "signature": "37466677894546",
+            "tags": [
+            ]
+        }
+    ],
+    "folders": [
+        {
+            "name": "springcloud"
+        }
+    ],
+    "id": "50",
+    "modified_time": "2023-03-07T06:45:38Z",
+    "signature": "29499513560466",
+    "version": 3
+}

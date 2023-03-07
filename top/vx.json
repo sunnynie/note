@@ -1,0 +1,103 @@
+{
+    "created_time": "2023-03-07T06:45:38Z",
+    "files": [
+        {
+            "attachment_folder": "",
+            "created_time": "2023-03-07T06:45:38Z",
+            "id": "59",
+            "modified_time": "2023-03-07T06:45:38Z",
+            "name": "notice.md",
+            "signature": "118237832863122",
+            "tags": [
+            ]
+        },
+        {
+            "attachment_folder": "",
+            "created_time": "2023-03-07T06:45:38Z",
+            "id": "69",
+            "modified_time": "2023-03-07T06:45:38Z",
+            "name": "会议室流程.pu",
+            "signature": "82739928161682",
+            "tags": [
+            ]
+        },
+        {
+            "attachment_folder": "",
+            "created_time": "2023-03-07T06:45:38Z",
+            "id": "70",
+            "modified_time": "2023-03-07T06:45:38Z",
+            "name": "加班时间.md",
+            "signature": "97274097491346",
+            "tags": [
+            ]
+        },
+        {
+            "attachment_folder": "",
+            "created_time": "2023-03-07T06:45:38Z",
+            "id": "71",
+            "modified_time": "2023-03-07T06:45:38Z",
+            "name": "固定资产api.md",
+            "signature": "117881350577554",
+            "tags": [
+            ]
+        },
+        {
+            "attachment_folder": "",
+            "created_time": "2023-03-07T06:45:38Z",
+            "id": "72",
+            "modified_time": "2023-03-07T06:45:38Z",
+            "name": "待办.md",
+            "signature": "102243374652818",
+            "tags": [
+            ]
+        },
+        {
+            "attachment_folder": "",
+            "created_time": "2023-03-07T06:45:38Z",
+            "id": "73",
+            "modified_time": "2023-03-07T06:45:38Z",
+            "name": "智慧工地.md",
+            "signature": "68248708504978",
+            "tags": [
+            ]
+        },
+        {
+            "attachment_folder": "",
+            "created_time": "2023-03-07T06:45:38Z",
+            "id": "74",
+            "modified_time": "2023-03-07T06:45:38Z",
+            "name": "智慧工地新增验桩结果字段.md",
+            "signature": "28902513106322",
+            "tags": [
+            ]
+        },
+        {
+            "attachment_folder": "",
+            "created_time": "2023-03-07T06:45:38Z",
+            "id": "81",
+            "modified_time": "2023-03-07T06:45:38Z",
+            "name": "账号.md",
+            "signature": "84307591224722",
+            "tags": [
+            ]
+        }
+    ],
+    "folders": [
+        {
+            "name": "人力资源"
+        },
+        {
+            "name": "流程对接"
+        },
+        {
+            "name": "消息待办"
+        },
+        {
+            "name": "设备管理"
+        }
+    ],
+    "id": "58",
+    "modified_time": "2023-03-07T06:45:38Z",
+    "signature": "41838954601874",
+    "version": 3
+}
