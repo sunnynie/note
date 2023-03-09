@@ -25,3 +25,25 @@ private final AtomicInteger nextHashCode= new AtomicInteger();
 private static final int HASH_INCREMENT=0X61c88647;
 
 ```
+### threadLocal 保证线程安全
+thread 源码：
+```java
+ThreadLocal.ThreadLocalMap threadLocal=null
+
+//设置方法
+public void set(T value){
+    Thread t=Thread.currentThread();
+    ThreadLocalMap map=getMap(t);
+    if(map!=null)
+        map.set(this,value);
+    else
+        createMap(t,value);
+    
+}
+
+//getMap()
+ThreadLocalMap getMap(Thread t){
+    return t.threadLocals;
+}
+```
+threadLocal操作值的时候，是获取当前线程的threadLocalMap对象，然后把值设置到这个对象中，这样对于不同的线程获取到的就是不同的threadLocalMap，那么向其中的保存值或者修改值只会影响到当前的线程，这样保证了线程的安全
