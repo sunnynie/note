@@ -54,3 +54,23 @@ Thread是线程私有的，每个线程都有其独特的副本变量，通过se
 
 ### 2.4上下问设计模式
 对于一个线程，可能有多个任务，分别有多个执行步骤。如果第n个执行步骤需要用到第一个执行步骤中的一个变量，常见的方法是设置一个上下文Context,将这个变量放到上下文Context中，通过这个方法都需要加这样的以一个参数，是不合理的。此时就可以运用ThreadLocal来改善上下文设计
+
+### 2.5 threadlocal 内存泄露的原因
+![](https://gitee.com/shuanger_nie/images/raw/master/note/java_base/threadlocal.md/230651509230355.png)
+
+#### 2.5.1  threadLocal原理  
+    threadLocal的set实际是在当前的线程对象中创建了一个内部变量
+    threadLocalMap<ThreadLocal,Object>,ThreadLocalMap的key是ThreadLocal的引用。    
+      
+#### 2.5.2 造成内存泄露的原因  
+    由于ThreadLocal对象是弱引用，如果外部没有强引用指向它，它就会被gc回收，导致entry的key为null
+    
+    如果当前的情况下，在栈中将threadlocal的引用设置成null,强引用1将会失效，那堆中的threadLocal1对象因为threadLocalMap的key对它的引用是弱引用，将会在下一次gc被回收，那就会出现key变成null,如果这时由于threadLocalMap.Entry对象还在强引用value,导致value 无法被回收，这时**内存泄露**就发生了，value成了一个永远也无法访问，且无法回收的对象
+#### 2.5.3 解决办法
+    1.将threadLocal设置成空之前，执行remove()方法，会将key为空的键值对清空
+    2. 尽量将threadLocal设置成static
+    3. 非必要尽量不要在threadLocal中放大对象
+   
+    
+
+    
