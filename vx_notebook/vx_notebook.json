@@ -212,8 +212,18 @@
             "path": "java_base/jvm的组成部分.md"
         },
         {
-            "last_accessed_time": "2023-03-26T23:24:16Z",
-            "line_number": 47,
+            "last_accessed_time": "2023-03-27T01:10:00Z",
+            "line_number": 9,
+            "path": "中间件/mq/rabbitmq安装.md"
+        },
+        {
+            "last_accessed_time": "2023-03-27T01:10:00Z",
+            "line_number": 25,
+            "path": "中间件/mq/rabbitmq的四种类型交换机.md"
+        },
+        {
+            "last_accessed_time": "2023-03-27T01:10:02Z",
+            "line_number": 46,
             "path": "微服务/分布式锁.md"
         }
     ],

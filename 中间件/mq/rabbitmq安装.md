@@ -12,9 +12,9 @@ docker run -d --hostname my-rabbit --name rabbit -p 15672:15672 -p 5673:5672 rab
 
 ```shell
 #创建用户
-rabbitmqctl add_ user admin admin
+rabbitmqctl add_user admin admin
 #创建用户角色
-rabbitmqclt set_user_tags admin administrator
+rabbitmqctl set_user_tags admin administrator
 #用户设置空间权限
 rabbitmqctl set_permissions -p / admin ".*" ".*" ".*"
 ```
