@@ -18,3 +18,8 @@ rabbitmqctl set_user_tags admin administrator
 #用户设置空间权限
 rabbitmqctl set_permissions -p / admin ".*" ".*" ".*"
 ```
+
+## 开启web功能
+```
+ rabbitmq-plugins enable rabbitmq_management
+```
