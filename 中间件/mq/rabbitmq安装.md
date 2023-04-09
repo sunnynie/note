@@ -19,7 +19,10 @@ rabbitmqctl set_user_tags admin administrator
 rabbitmqctl set_permissions -p / admin ".*" ".*" ".*"
 ```
 
-## 开启web功能
+## 开启功能
 ```
- rabbitmq-plugins enable rabbitmq_management
+##web管理界面
+rabbitmq-plugins enable rabbitmq_management
+#开启rabbitmq的tracing插件
+rabbitmq-plugins enable rabbitmq_tracing
 ```
