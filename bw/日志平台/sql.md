@@ -1,5 +1,11 @@
-# 添加messgeType 消息类型
+# 添加messgeType 消息类型 message
 ALTER TABLE XJZWAPP.BW_MSG_INFO ADD SUB_MSG_TYPE VARCHAR2(10) NULL;
 COMMENT ON COLUMN XJZWAPP.BW_MSG_INFO.SUB_MSG_TYPE IS '消息类型 预警("0") 通知("1") 作业("3") 审批("4")';
+
+# 添加messagType 消息类型 notice
+ALTER TABLE XJZWAPP.BW_NOTICE_INFO ADD SUB_MSG_TYPE VARCHAR2(10) NULL;
+COMMENT ON COLUMN XJZWAPP.BW_NOTICE_INFO.SUB_MSG_TYPE IS '消息类型 预警("0") 通知("1") 作业("3") 审批("4")';
+
+
 
 
