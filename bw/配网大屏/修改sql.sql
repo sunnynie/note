@@ -18,3 +18,17 @@ COMMENT ON COLUMN t_jxjh_day_plan_rel.plan_id IS '计划id';
 COMMENT ON COLUMN t_jxjh_day_plan_rel.gzp_id IS '工作票';
 COMMENT ON COLUMN t_jxjh_day_plan_rel.czp_id IS '操作票';
 COMMENT ON COLUMN t_jxjh_day_plan_rel.pzzy_id IS '标准作业id';
+
+--风控计划  指导卡 关联
+CREATE TABLE t_jxjh_day_plan_zdk_rel (
+	plan_id varchar(40) NULL, -- 计划id
+	zdk_name varchar(100) NULL, -- 指导卡名称
+	form_value varchar(100) NULL -- 表单值
+);
+COMMENT ON TABLE t_jxjh_day_plan_zdk_rel IS '风控计划  指导卡 关联';
+
+-- Column comments
+
+COMMENT ON COLUMN t_jxjh_day_plan_zdk_rel.plan_id IS '计划id';
+COMMENT ON COLUMN t_jxjh_day_plan_zdk_rel.zdk_name IS '指导卡名称';
+COMMENT ON COLUMN t_jxjh_day_plan_zdk_rel.form_value IS '表单值';
