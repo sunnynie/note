@@ -32,3 +32,17 @@ COMMENT ON TABLE t_jxjh_day_plan_zdk_rel IS '风控计划  指导卡 关联';
 COMMENT ON COLUMN t_jxjh_day_plan_zdk_rel.plan_id IS '计划id';
 COMMENT ON COLUMN t_jxjh_day_plan_zdk_rel.zdk_name IS '指导卡名称';
 COMMENT ON COLUMN t_jxjh_day_plan_zdk_rel.form_value IS '表单值';
+
+
+-- DROP TABLE %t_jxjh_day_plan_rel_access;
+
+CREATE TABLE %t_jxjh_day_plan_rel_access (
+	access_code varchar(100) NULL, -- 授权码
+	"disable" varchar(1) NULL -- 是否有效 0.有效 1.无效
+);
+COMMENT ON TABLE %t_jxjh_day_plan_rel_access IS '风控计划关联授权表';
+
+-- Column comments
+
+COMMENT ON COLUMN %t_jxjh_day_plan_rel_access.access_code IS '授权码';
+COMMENT ON COLUMN %t_jxjh_day_plan_rel_access."disable" IS '是否有效 0.有效 1.无效';
