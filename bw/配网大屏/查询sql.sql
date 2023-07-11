@@ -75,12 +75,8 @@ FROM
             T_YJ_DWYJ_LP_CZPJL tydlc
         WHERE
             TYDLC.zyfl = 3
-        <if test="ssdsId!=null and ssdsId!=''">
-            and tydlc.SSDSID=#{ssdsId}
-        </if>
-        <if test="date !=null and date!=''">
-            and TO_CHAR(ZPSJ,'yyyy-MM-dd') = #{date}
-        </if>
+            --and tydlc.SSDSID=#{ssdsId}
+            --and TO_CHAR(ZPSJ,'yyyy-MM-dd') = #{date}
         GROUP BY
             tydlc.pzt ,
             TYDLC .PLX 
