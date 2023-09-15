@@ -310,3 +310,26 @@ graph TB
 季度列表-半年度列表-年度列表 --> 月度汇总分数
 月度汇总分数 --> 结束((结束))
 ```
+
+```java
+/**
+ * 会签提交
+ * 
+ * @param evaluateSaveDto
+ * @return
+ */
+public Object submitSign(@Valid EvaluateSaveDto evaluateSaveDto) {
+    String groupId = applicationContext.getBean(HmdjEvaluateGroupAppService.class)
+            .saveEvaluateList(evaluateSaveDto);
+
+    List<HmdjEvaluateVersion> versionList = getVersion(Arrays.asList(groupId));
+    CommonAssert.isTrue(!versionList.isEmpty(), "该记录为空");
+    HmdjEvaluateVersionExtendsVo copyProperties = BeanUtil.copyProperties(versionList.get(0),
+            HmdjEvaluateVersionExtendsVo.class);
+    copyProperties.setGroupId(groupId);
+    copyProperties.setStatus(EvaluateStatusEnum.DTJ.getValue());
+    //统一的流程处理
+applicationContext.getBean(HmdjEvaluateGroupAppService.class).dealUpdateStatus(copyProperties);
+    return groupId;
+}
+```
