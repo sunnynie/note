@@ -139,3 +139,5 @@
   - 如果是多台机子，将指纹指纹放在同一个目录下，创建压缩包 tar cvzf ../finger.tar.gz ./*,在上级目录生成名字为finger.tar.gz的压缩包
   - 尽量用root 账号采集指纹文件，部署应用和采集指纹的账号需要一致，压缩包解压之后就只有指纹文件，没有其他的文件和文件夹
 
+- 安装命令: cd original/package/Install$  python  install.python
+- docker 中查看查看镜像 docker ps 查找对应的运行中的容器 ,docker attach <容器id> ,退出容器(ctl+p+q)
