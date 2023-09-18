@@ -1,0 +1,4 @@
+- 百度地址 https://cloud.baidu.com/
+- 云账号 onceinfo0831/Zz12341234
+- 控制台：https://console.bce.baidu.com/ai/#/ai/ocr/package/index
+- 私有化部署文档：https://ai.baidu.com/ai-doc/OCR/Kkus8qobv
